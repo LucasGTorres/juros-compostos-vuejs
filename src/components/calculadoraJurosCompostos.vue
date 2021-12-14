@@ -95,9 +95,8 @@ export default {
           this.data.valorInicial = this.data.valorInicial.replaceAll(".", "").replaceAll(",", ".")
           this.data.aporteMensal = this.data.aporteMensal.replaceAll(".", "").replaceAll(",", ".")
           this.data.juros = this.data.juros.replaceAll(".", "").replaceAll(",", ".")
-
-
-          axios.post("http://localhost:8080/api/juros-compostos", this.data).then((resultado) => {
+          
+          axios.post("https://api-juros-compostos.herokuapp.com/api/juros-compostos", this.data).then((resultado) => {
               console.log(resultado.data)
           })
       }
