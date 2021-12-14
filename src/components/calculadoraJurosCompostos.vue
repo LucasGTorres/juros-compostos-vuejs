@@ -97,7 +97,7 @@ export default {
           this.data.juros = this.data.juros.replaceAll(".", "").replaceAll(",", ".")
           
           axios.post("https://api-juros-compostos.herokuapp.com/api/juros-compostos", this.data).then((resultado) => {
-              console.log(resultado.data)
+              alert("Aporte: " + resultado.data.montanteSemJuros + "Juros: " + resultado.data.jurosTotal + "Total: " + resultado.data.montanteComJuros )
           })
       }
   },
