@@ -1,9 +1,13 @@
 <template>
-  <div class="d-flex justify-content-center">
-    <form class="border m-2 p-2" style="width: 50vw">
+  <div class="d-flex justify-content-center row">
+
+    
+    <form class="border m-2 p-2 col-11 col-xl-6" >
+      <h1 class="text-center">Calculadora de Juros Compostos</h1>
+
       <div class="row">
-        <div class="col">
-          <label for="exampleInputEmail1">Aporte Inicial</label>
+        <div class="col-12 col-sm-6">
+          <label class="mt-2">Aporte Inicial</label>
           <div class="input-group flex-nowrap col">
             <span class="input-group-text">R$</span>
             <input
@@ -15,8 +19,8 @@
           </div>
         </div>
 
-        <div class="col">
-          <label for="exampleInputEmail1">Aporte Mensal</label>
+        <div class="col-12 col-sm-6">
+          <label class="mt-2">Aporte Mensal</label>
           <div class="input-group flex-nowrap col">
             <span class="input-group-text">R$</span>
             <input
@@ -29,9 +33,9 @@
         </div>
       </div>
 
-      <div class="row mt-2">
-        <div class="col">
-          <label for="exampleInputEmail1">Taxa de Juros</label>
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <label class="mt-2">Taxa de Juros</label>
           <div class="input-group flex-nowrap col">
             <span class="input-group-text">%</span>
             <input
@@ -43,8 +47,8 @@
           </div>
         </div>
 
-        <div class="col">
-          <label for="exampleInputEmail1">Periodo (Meses)</label>
+        <div class="col-12 col-sm-6">
+          <label class="mt-2">Periodo (Meses)</label>
           <div class="input-group flex-nowrap col">
             <input
               type="number"
@@ -68,6 +72,7 @@
           </button>
         </div>
       </div>
+
     </form>
   </div>
 </template>
@@ -97,7 +102,7 @@ export default {
           this.data.juros = this.data.juros.replaceAll(".", "").replaceAll(",", ".")
           
           axios.post("https://api-juros-compostos.herokuapp.com/api/juros-compostos", this.data).then((resultado) => {
-              alert("Aporte: " + resultado.data.montanteSemJuros + "Juros: " + resultado.data.jurosTotal + "Total: " + resultado.data.montanteComJuros )
+              alert("Aporte: " + resultado.data.montanteSemJuros + "\nJuros: " + resultado.data.jurosTotal + "\nTotal: " + resultado.data.montanteComJuros )
           })
       }
   },
