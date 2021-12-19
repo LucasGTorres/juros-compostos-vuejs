@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-center row">
 
     
-    <form class="border m-2 p-2 col-11 col-xl-6" >
+    <form class="border m-2 p-2 col-11 col-lg-7 col-xl-6" >
       <h1 class="text-center">Calculadora de Juros Compostos</h1>
 
       <div class="row">
@@ -61,7 +61,7 @@
 
       <div class="row mt-2">
         <div class="col" id="limpar">
-          <button type="button" class="btn btn-secondary shadow-none form-control">
+          <button type="button" @click="limpar()" class="btn btn-secondary shadow-none form-control">
             Limpar
           </button>
         </div>
@@ -102,8 +102,13 @@ export default {
           this.data.juros = this.data.juros.replaceAll(".", "").replaceAll(",", ".")
           
           axios.post("https://api-juros-compostos.herokuapp.com/api/juros-compostos", this.data).then((resultado) => {
-              alert("Aporte: " + resultado.data.montanteSemJuros + "\nJuros: " + resultado.data.jurosTotal + "\nTotal: " + resultado.data.montanteComJuros )
+              alert("Aporte: " + resultado.data.totalInvestido + 
+                  "\nJuros: " + resultado.data.totalJuros + 
+                  "\nTotal: " + resultado.data.totalFinal)
           })
+      },
+      limpar(){
+        this.data = {}
       }
   },
 
