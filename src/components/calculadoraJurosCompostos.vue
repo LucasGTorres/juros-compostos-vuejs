@@ -2,7 +2,11 @@
   <div class="d-flex justify-content-center row">
 
     
+<<<<<<< HEAD
     <form class="border m-2 p-2 col-11 col-lg-7 col-xl-6" >
+=======
+    <form class="border m-2 p-2 col-11 col-xl-6" >
+>>>>>>> b6380dceeda4a994abb21943d98d038f8f35ea91
       <h1 class="text-center">Calculadora de Juros Compostos</h1>
 
       <div class="row">
@@ -105,6 +109,7 @@ export default {
               alert("Aporte: " + resultado.data.totalInvestido + 
                   "\nJuros: " + resultado.data.totalJuros + 
                   "\nTotal: " + resultado.data.totalFinal)
+
           })
       },
       limpar(){
